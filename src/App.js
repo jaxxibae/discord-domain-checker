@@ -47,11 +47,15 @@ class App extends Component {
         <h1>
           Discord Domain Checker
         </h1>
+        <br />
         <p>
           Do you doubt of a website that says its made by Discord? Submit it here:
         </p>
+        <br />
         <input className="input" type="text" name="domain" placeholder="discord.com" onChange={this.updateInput} />
+        <br />
         <h3 className={this.state.isValid?.toString()}>{(this.state && this.state.status) ? this.state.status : ''}</h3>
+        <br />
         <Button variant="primary" onClick={this.handleSubmit}>Submit</Button>
       </header>
     </div>
