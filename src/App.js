@@ -34,10 +34,17 @@ class App extends Component {
   }
 
   domainFromUrl (url) {
+    var result
+    var match
     // eslint-disable-next-line
-    url = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:[^.]+\.)?([^:\/\n\?\=]+)/im)
-    console.log(url)
-    return url[0].toLowerCase()
+    if (match = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n\?\=]+)/im)) {
+        result = match[1]
+        // eslint-disable-next-line
+        if (match = result.match(/^[^\.]+\.(.+\..+)$/)) {
+            result = match[1]
+        }
+    }
+    return result.toLowerCase()
 }
 
   render () {

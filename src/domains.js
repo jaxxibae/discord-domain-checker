@@ -7,7 +7,9 @@ const domains = [
   "discord.gg",
   "discordapp.net",
   "media.discordapp.net",
-  "discordsays.com"
+  "discordsays.com",
+  "dis.gd",
+  "discordstatus.com"
 ]
 
 export default domains
