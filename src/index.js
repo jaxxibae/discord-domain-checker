@@ -1,13 +1,18 @@
-import React from 'react';
+import { React, Suspense, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import './i18n';
 import reportWebVitals from './reportWebVitals';
 
+import CircleLoader from "react-spinners/CircleLoader";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StrictMode>
+    <Suspense fallback={<CircleLoader />}>
+      <App />
+    </Suspense>
+  </StrictMode>,
   document.getElementById('root')
 );
 

@@ -1,0 +1,6 @@
+{
+  "valid": "{{strippedDomain}} é um domínio válido do Discord.",
+  "invalid": "{{strippedDomain}} não é um domínio válido do Discord.",
+  "description": "Não tem a certeza se um website pertence ao Discord? Submeta-o aqui:",
+  "submit": "Submeter"
+}

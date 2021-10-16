@@ -3,17 +3,29 @@ import { Button } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import domains from './domains'
+import { withTranslation } from 'react-i18next';
 import { Component } from 'react';
+
+import ReactCountryFlag from 'react-country-flag';
 
 class App extends Component {
   constructor (props) {
     super(props)
 
-    this.state = { domain: '', status: '', isValid: null }
+    this.state = { domain: '', status: '', isValid: null, locale: 'en-US' }
 
     this.updateInput = this.updateInput.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.updateLocale = this.updateLocale.bind(this)
   }  
+
+  componentDidMount () {
+    const { i18n } = this.props
+
+    i18n.changeLanguage(this.state.locale)
+
+    console.log(i18n)
+  }
 
   updateInput (event) {
     this.setState({ domain: event.target.value })
@@ -26,11 +38,23 @@ class App extends Component {
 
     const strippedDomain = this.domainFromUrl(domain)
 
+    const { t } = this.props;
+
     if (domains.includes(strippedDomain)) {
-      this.setState({ status: `${strippedDomain} is a valid Discord domain.`, isValid: true })
+      this.setState({ status: t('valid', strippedDomain), isValid: true })
     } else {
-      this.setState({ status: `${strippedDomain} isn't a valid Discord domain.`, isValid: false })
+      this.setState({ status: t('invalid', strippedDomain), isValid: false })
     }
+  }
+
+  updateLocale (event) {
+    const locale = event.target.getAttribute('value')
+    
+    this.setState({ locale })
+
+    const { i18n } = this.props;
+
+    i18n.changeLanguage(locale)
   }
 
   domainFromUrl (url) {
@@ -48,6 +72,7 @@ class App extends Component {
 }
 
   render () {
+    const { t } = this.props;
     return (
       <div className="App">
       <header className="App-header">
@@ -56,18 +81,24 @@ class App extends Component {
         </h1>
         <br />
         <p>
-          Do you doubt of a website that says its made by Discord? Submit it here:
+          {t('description')}
         </p>
         <br />
         <input className="input" type="text" name="domain" placeholder="discord.com" onChange={this.updateInput} />
         <br />
         <h3 className={this.state.isValid?.toString()}>{(this.state && this.state.status) ? this.state.status : ''}</h3>
         <br />
-        <Button variant="primary" onClick={this.handleSubmit}>Submit</Button>
+        <Button variant="primary" onClick={this.handleSubmit}>{t('submit')}</Button>
+        <br />
+        <br />
+        <div>
+          {/* eslint-disable-next-line */}
+          <a id="en-US" href="#" onClick={this.updateLocale}><ReactCountryFlag countryCode="US" aria-label="English" value="en-US" svg /></a> <a id="pt-BR" href="#" onClick={this.updateLocale}><ReactCountryFlag countryCode="BR" aria-label="Portuguese (Brazil)" value="pt-BR" svg  /></a>
+        </div>
       </header>
     </div>
     )
   }
 }
 
-export default App;
+export default withTranslation()(App);

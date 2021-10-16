@@ -1,0 +1,6 @@
+{
+  "valid": "{{strippedDomain}} is a valid Discord domain.",
+  "invalid": "{{strippedDomain}} isn't a valid Discord domain.",
+  "description": "Do you doubt of a website that says its made by Discord? Submit it here:",
+  "submit": "Submit"
+}
