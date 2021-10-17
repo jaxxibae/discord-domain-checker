@@ -8,6 +8,8 @@ import { Component } from 'react'
 
 import ReactCountryFlag from 'react-country-flag'
 
+import ReactGA from 'react-ga'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -24,7 +26,8 @@ class App extends Component {
 
     i18n.changeLanguage(this.state.locale)
 
-    console.log(i18n)
+    ReactGA.initialize('G-7MF8HNHZJH');
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
   updateInput (event) {
