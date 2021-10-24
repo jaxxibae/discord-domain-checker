@@ -12,7 +12,8 @@ const domains = [
   'discordstatus.com',
   'discord.media',
   'discord.new',
-  'router.discordapp.net'
+  'router.discordapp.net',
+  'discord.dev'
 ]
 
 export default domains
