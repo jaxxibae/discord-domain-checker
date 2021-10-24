@@ -2,5 +2,22 @@
   "valid": "{{strippedDomain}} is a valid Discord domain.",
   "invalid": "{{strippedDomain}} isn't a valid Discord domain.",
   "description": "Do you doubt of a website that says its made by Discord? Submit it here:",
-  "submit": "Submit"
+  "submit": "Submit",
+  "domainDescription": "Description",
+  "discord.com": "Discord's home page",
+  "discordapp.com": "Old Discord domain",
+  "cdn.discordapp.com": "Content Delivery Network domain",
+  "discord.store": "Discord's merchandising store",
+  "discord.gift": "Gift domain (Nitro, games, etc.)",
+  "discord.gg": "Guild invite domain",
+  "discordapp.net": "Secondary Discord domain",
+  "media.discordapp.net": "Proxy domain for the Content Delivery Network",
+  "discordsays.com": "Discord Says game domain",
+  "dis.gd": "Discord link shortener",
+  "discordstatus.com": "Discord Status",
+  "discord.media": "Domain used for voice channels and RTC",
+  "discord.new": "Domain used for guild templates",
+  "router.discordapp.net": "Routing endpoint",
+  "discord.dev": "Discord Developers page",
+  "watchanimeattheoffice.com": "Secondary Discord domain"
 }

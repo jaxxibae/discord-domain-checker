@@ -1,4 +1,5 @@
 const domains = require('../src/domains.js').default
+const enUs = require('../public/locales/en-US.json')
 
 function domainFromUrl (url) {
   var result
@@ -29,7 +30,7 @@ module.exports = (req, res) => {
   const strippedDomain = domainFromUrl(domain)
 
   if (domains.includes(strippedDomain)) {
-    return res.status(200).json({ strippedDomain, isValid: true })
+    return res.status(200).json({ strippedDomain, isValid: true, description: enUs[strippedDomain] })
   } else {
     return res.status(200).json({ strippedDomain, isValid: false })
   }

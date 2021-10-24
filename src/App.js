@@ -14,7 +14,13 @@ class App extends Component {
   constructor (props) {
     super(props)
 
-    this.state = { domain: '', status: '', isValid: null, locale: 'en-US' }
+    this.state = {
+      domain: '',
+      status: '',
+      description: '',
+      isValid: null,
+      locale: 'en-US'
+    }
 
     this.updateInput = this.updateInput.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,7 +32,7 @@ class App extends Component {
 
     i18n.changeLanguage(this.state.locale)
 
-    ReactGA.initialize('G-7MF8HNHZJH');
+    ReactGA.initialize('G-7MF8HNHZJH')
     ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
@@ -44,7 +50,11 @@ class App extends Component {
     const { t } = this.props
 
     if (domains.includes(strippedDomain)) {
-      this.setState({ status: t('valid', { strippedDomain }), isValid: true })
+      this.setState({
+        status: t('valid', { strippedDomain }),
+        isValid: true,
+        description: t(strippedDomain)
+      })
     } else {
       this.setState({
         status: t('invalid', { strippedDomain }),
@@ -99,7 +109,8 @@ class App extends Component {
           />
           <br />
           <h3 className={this.state.isValid?.toString()}>
-            {this.state && this.state.status ? this.state.status : ''}
+            {this.state && this.state.status ? this.state.status : ''}<br />
+            {this.state && this.state.description ? `${t('domainDescription')}: ${this.state.description}` : ''}
           </h3>
           <br />
           <Button variant='primary' onClick={this.handleSubmit}>

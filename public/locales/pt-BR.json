@@ -2,5 +2,22 @@
   "valid": "{{strippedDomain}} é um domínio válido do Discord.",
   "invalid": "{{strippedDomain}} não é um domínio válido do Discord.",
   "description": "Não tem a certeza se um website pertence ao Discord? Submeta-o aqui:",
-  "submit": "Submeter"
+  "submit": "Submeter",
+  "domainDescription": "Descrição",
+  "discord.com": "Página Inicial do Discord",
+  "discordapp.com": "Domínio antigo do Discord",
+  "cdn.discordapp.com": "Serviço de distribuição de ficheiros (Content Delivery Network)",
+  "discord.store": "Loja de merchandising do Discord",
+  "discord.gift": "Domínio de gifts do Discord (Nitro, jogos, etc.)",
+  "discord.gg": "Domínio para convites de servidores",
+  "discordapp.net": "Domínio secundário do Discord",
+  "media.discordapp.net": "Domínio proxy para a CDN",
+  "discordsays.com": "Domínio para o jogo Discord Says no cliente",
+  "dis.gd": "Encurtador do Discord",
+  "discordstatus.com": "Estado do Discord",
+  "discord.media": "Domínio usado para canais de voz e RTC",
+  "discord.new": "Domínio usado para templates de servidores",
+  "router.discordapp.net": "Endpoint de roteamento",
+  "discord.dev": "Página de desenvolvedores do Discord",
+  "watchanimeattheoffice.com": "Domínio secundário do Discord"
 }

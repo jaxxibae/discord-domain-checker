@@ -13,7 +13,8 @@ const domains = [
   'discord.media',
   'discord.new',
   'router.discordapp.net',
-  'discord.dev'
+  'discord.dev',
+  'watchanimeattheoffice.com'
 ]
 
 export default domains
