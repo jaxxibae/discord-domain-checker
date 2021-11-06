@@ -3,6 +3,7 @@ const domains = [
   'discordapp.com',
   'cdn.discordapp.com',
   'discord.store',
+  'discordmerch.com',
   'discord.gift',
   'discord.gg',
   'discordapp.net',
